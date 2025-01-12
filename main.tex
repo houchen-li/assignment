@@ -18,37 +18,53 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\documentclass[11pt,a4paper]{article} % A4 paper and 11pt font size
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT SETTINGS
+%----------------------------------------------------------------------------------------
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
-\usepackage[english]{babel} % English language/hyphenation
-\usepackage{amsmath,amsfonts,amsthm} % Math packages
-%\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
-\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
-\usepackage{graphicx} % Required for the inclusion of images
-%\usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{authblk}
-\usepackage{indentfirst}
-\usepackage{subcaption}
-\usepackage{wrapfig}
-\usepackage{multirow}
 \usepackage{hyperref}
-\usepackage{float}
 \usepackage{url}
-\usepackage{booktabs}
-\usepackage{times}
-
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
-\usepackage{sectsty} % Allows customizing section commands
-\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+%----------------------------------------------------------------------------------------
+%	PAGE SETTINGS
+%----------------------------------------------------------------------------------------
 
 \usepackage{geometry}
+%\geometry{a4paper,scale=0.8}
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
 
-\graphicspath{{images/}{figures/}}
+
+%----------------------------------------------------------------------------------------
+%	FONT SETTINGS
+%----------------------------------------------------------------------------------------
+
+\usepackage{xeCJK}
+
+\setmainfont[
+    Extension=.otf,
+    UprightFont=NewCM10-Regular,
+    BoldFont=NewCM10-Bold,
+    ItalicFont=NewCM10-Italic,
+    BoldItalicFont=NewCM10-BoldItalic
+]{NewComputerModern}
+
+\setCJKmainfont[Extension=.otf,
+    UprightFont=SourceHanSerifCN-Regular,
+    BoldFont=SourceHanSerifCN-Bold,
+    ItalicFont=ukai.ttc,
+]{SourceHanSerifCN}
+
+
+%----------------------------------------------------------------------------------------
+%	HEADING AND FOOTING
+%----------------------------------------------------------------------------------------
 
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -60,13 +76,50 @@
 \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
 \setlength{\headheight}{13.6pt} % Customize the height of the header
 
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS AND TABLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{float}
+\graphicspath{{images/}{figures/}}
+
+
+%----------------------------------------------------------------------------------------
+%   EQUATION SETTINGS
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+%\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+%\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+
 \numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 \numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 \numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 
-\linespread{1.2}
 
-%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+%----------------------------------------------------------------------------------------
+%   SECTIONS
+%----------------------------------------------------------------------------------------
+
+%\usepackage[english]{babel} % English language/hyphenation
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+%----------------------------------------------------------------------------------------
+%   INDENTATION
+%----------------------------------------------------------------------------------------
+
+\usepackage{indentfirst}
+\linespread{1.2}
+\setlength\parindent{22pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -76,9 +129,10 @@
 
 \title{	
 	\normalfont \normalsize 
-	\textsc{Beijing Qingtian Truck Inc.} \\ [25pt] % Your university, school and/or department name(s)
+	\textsc{Boyle Development Team} \\ [25pt] % Your university, school and/or department name(s)
 	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-	\huge XXXXXX XXXXXX: Assignment X \\ % The assignment title
+	\huge \textbf{An Introduction to Boyle Library} \\ % The assignment title[0.2cm] % The assignment title
+    \Large the high performance math library written in C++23 \\ % The assignment subtitle
 	\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -90,23 +144,46 @@
 
 \maketitle % Print the title
 
+
 %----------------------------------------------------------------------------------------
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{XXXXXX XXXXXX}
+\section{Introduction}
+
+\lipsum[1-4]
+
+\clearpage
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2
 %----------------------------------------------------------------------------------------
 
-\section{XXXXXX XXXXXX}
+\section{Method}
+
+\lipsum[5-15]
+
+\clearpage
 
 %----------------------------------------------------------------------------------------
-%	PROBLEM 2
+%	PROBLEM 3
 %----------------------------------------------------------------------------------------
 
-\section{XXXXXX XXXXXX}
+\section{Result}
+
+\lipsum[15-30]
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\section{Conclusion}
+
+\lipsum[30-40]
+
+\clearpage
 
 %----------------------------------------------------------------------------------------
 
